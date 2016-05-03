@@ -1,0 +1,447 @@
+L:\Git\Repos\Projects\NewGit>git init
+
+Initialized empty Git repository in L:/Git/Repos/Projects/NewGit/.git/
+
+L:\Git\Repos\Projects\NewGit>git add *.txt
+
+L:\Git\Repos\Projects\NewGit>git commit -m "init commit to master branch"
+[master (root-commit) 6db7628] init commit to master branch
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 Repos/Projects/NewGit/File 1.txt
+ create mode 100644 Repos/Projects/NewGit/File 2.txt
+
+L:\Git\Repos\Projects\NewGit>git commit -m "more changes"
+On branch master
+Changes not staged for commit:
+        modified:   File 1.txt
+        modified:   File 2.txt
+
+Untracked files:
+        ../Embosser/
+
+no changes added to commit
+
+L:\Git\Repos\Projects\NewGit>git add *.txt
+
+L:\Git\Repos\Projects\NewGit>git commit -m "more changes"
+[master 79b7134] more changes
+ 2 files changed, 3 insertions(+)
+
+
+L:\Git\Repos\Projects\NewGit>git add *.txt
+
+L:\Git\Repos\Projects\NewGit>git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   File 1.txt
+        new file:   File 2.txt
+        new file:   File 3.txt
+
+
+L:\Git\Repos\Projects\NewGit>git add *.txt
+
+L:\Git\Repos\Projects\NewGit>git commit -m "added file 3"
+[master (root-commit) c4a7245] added file 3
+ 3 files changed, 4 insertions(+)
+ create mode 100644 File 1.txt
+ create mode 100644 File 2.txt
+ create mode 100644 File 3.txt
+
+
+L:\Git\Repos\Projects\NewGit>git log
+commit c4a7245299be8aa7a7916a5a31f5a1ebfdde242e
+Author: wenyan Wang <wenyan.wang@pnc.com>
+Date:   Tue May 3 14:31:10 2016 -0400
+
+    added file 3
+
+L:\Git\Repos\Projects\NewGit>git shortlog
+wenyan Wang (1):
+      added file 3
+
+
+
+L:\Git\Repos\Projects\NewGit>git commit --amend
+error: There was a problem with the editor 'vi'.
+Please supply the message using either -m or -F option.
+
+L:\Git\Repos\Projects\NewGit>git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   File 1.txt
+
+
+L:\Git\Repos\Projects\NewGit>git log
+commit a942890bfb974f724b3950b3a3aed6ca297299e3
+Author: wenyan Wang <wenyan.wang@pnc.com>
+Date:   Tue May 3 14:42:28 2016 -0400
+
+    Stashed changes
+
+commit c4a7245299be8aa7a7916a5a31f5a1ebfdde242e
+Author: wenyan Wang <wenyan.wang@pnc.com>
+Date:   Tue May 3 14:31:10 2016 -0400
+
+    added file 3
+
+L:\Git\Repos\Projects\NewGit>git show
+commit a942890bfb974f724b3950b3a3aed6ca297299e3
+Author: wenyan Wang <wenyan.wang@pnc.com>
+Date:   Tue May 3 14:42:28 2016 -0400
+
+    Stashed changes
+
+diff --git a/File 3.txt b/File 3.txt
+index 94a1d55..1497bec 100644
+--- a/File 3.txt
++++ b/File 3.txt
+@@ -1 +1,2 @@
+-modified file 3
+\ No newline at end of file
++modified file 3
++stash changes
+\ No newline at end of file
+L:\>cd git\repos\projects\Newgit
+
+L:\Git\Repos\Projects\NewGit>git commit --amend
+error: There was a problem with the editor 'vi'.
+Please supply the message using either -m or -F option.
+
+L:\Git\Repos\Projects\NewGit>git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   File 1.txt
+
+
+L:\Git\Repos\Projects\NewGit>git log
+commit a942890bfb974f724b3950b3a3aed6ca297299e3
+Author: wenyan Wang <wenyan.wang@pnc.com>
+Date:   Tue May 3 14:42:28 2016 -0400
+
+    Stashed changes
+
+commit c4a7245299be8aa7a7916a5a31f5a1ebfdde242e
+Author: wenyan Wang <wenyan.wang@pnc.com>
+Date:   Tue May 3 14:31:10 2016 -0400
+
+    added file 3
+
+L:\Git\Repos\Projects\NewGit>git show
+commit a942890bfb974f724b3950b3a3aed6ca297299e3
+Author: wenyan Wang <wenyan.wang@pnc.com>
+Date:   Tue May 3 14:42:28 2016 -0400
+
+    Stashed changes
+
+diff --git a/File 3.txt b/File 3.txt
+index 94a1d55..1497bec 100644
+--- a/File 3.txt
++++ b/File 3.txt
+@@ -1 +1,2 @@
+-modified file 3
+\ No newline at end of file
++modified file 3
++stash changes
+\ No newline at end of file
+
+L:\Git\Repos\Projects\NewGit>git tag -a v1.0 -m "stable version 1"
+
+L:\Git\Repos\Projects\NewGit>git show
+commit a942890bfb974f724b3950b3a3aed6ca297299e3
+Author: wenyan Wang <wenyan.wang@pnc.com>
+Date:   Tue May 3 14:42:28 2016 -0400
+
+    Stashed changes
+
+diff --git a/File 3.txt b/File 3.txt
+index 94a1d55..1497bec 100644
+--- a/File 3.txt
++++ b/File 3.txt
+@@ -1 +1,2 @@
+-modified file 3
+\ No newline at end of file
++modified file 3
++stash changes
+\ No newline at end of file
+
+L:\Git\Repos\Projects\NewGit>git show v1.0
+tag v1.0
+Tagger: wenyan Wang <wenyan.wang@pnc.com>
+Date:   Tue May 3 14:48:11 2016 -0400
+
+stable version 1
+
+commit a942890bfb974f724b3950b3a3aed6ca297299e3
+Author: wenyan Wang <wenyan.wang@pnc.com>
+Date:   Tue May 3 14:42:28 2016 -0400
+
+    Stashed changes
+
+diff --git a/File 3.txt b/File 3.txt
+index 94a1d55..1497bec 100644
+--- a/File 3.txt
++++ b/File 3.txt
+@@ -1 +1,2 @@
+-modified file 3
+\ No newline at end of file
++modified file 3
++stash changes
+\ No newline at end of file
+
+
+pp84689@PP7BFZ2Y52 MINGW64 /z/Git/Repos/Projects/NewGit (v2.0)
+$ git branch v2.0
+fatal: A branch named 'v2.0' already exists.
+
+pp84689@PP7BFZ2Y52 MINGW64 /z/Git/Repos/Projects/NewGit (v2.0)
+$ git branch v2.1
+
+pp84689@PP7BFZ2Y52 MINGW64 /z/Git/Repos/Projects/NewGit (v2.0)
+$ git checkout v2.1
+Switched to branch 'v2.1'
+
+pp84689@PP7BFZ2Y52 MINGW64 /z/Git/Repos/Projects/NewGit (v2.1)
+$ git add *.txt
+
+pp84689@PP7BFZ2Y52 MINGW64 /z/Git/Repos/Projects/NewGit (v2.1)
+$ git commit -m "v2 changes"
+[v2.1 8530560] v2 changes
+ 3 files changed, 5 insertions(+), 2 deletions(-)
+ create mode 100644 File 4.txt
+
+pp84689@PP7BFZ2Y52 MINGW64 /z/Git/Repos/Projects/NewGit (v2.1)
+$ git add *.txt
+
+pp84689@PP7BFZ2Y52 MINGW64 /z/Git/Repos/Projects/NewGit (v2.1)
+$ git commit -m "additional v2 changes"
+[v2.1 f6bb692] additional v2 changes
+ 1 file changed, 1 insertion(+)
+
+pp84689@PP7BFZ2Y52 MINGW64 /z/Git/Repos/Projects/NewGit (v2.1)
+$ git log
+commit f6bb692fbe68495892142a068aa7711aefaaa96c
+Author: wenyan Wang <wenyan.wang@pnc.com>
+commit f6bb692fbe68495892142a068aa7711aefaaa96c
+Author: wenyan Wang <wenyan.wang@pnc.com>
+Date:   Tue May 3 14:58:24 2016 -0400
+
+    additional v2 changes
+
+commit 85305607cace3469628dc80a3ad121e14af7653d
+Author: wenyan Wang <wenyan.wang@pnc.com>
+Date:   Tue May 3 14:57:04 2016 -0400
+
+    v2 changes
+
+commit 3647f935baff504cff7e2a9b20479fbb220c74ca
+Author: wenyan Wang <wenyan.wang@pnc.com>
+Date:   Tue May 3 14:52:29 2016 -0400
+
+    Commit the change in new branch
+
+commit a942890bfb974f724b3950b3a3aed6ca297299e3
+Author: wenyan Wang <wenyan.wang@pnc.com>
+Date:   Tue May 3 14:42:28 2016 -0400
+
+    Stashed changes
+...skipping...
+
+
+                   SUMMARY OF LESS COMMANDS
+
+      Commands marked with * may be preceded by a number, N.
+      Notes in parentheses indicate the behavior if N is given.
+      A key preceded by a caret indicates the Ctrl key; thus ^K is ctrl-K.
+
+  h  H                 Display this help.
+  q  :q  Q  :Q  ZZ     Exit.
+ ---------------------------------------------------------------------------
+
+                           MOVING
+
+  e  ^E  j  ^N  CR  *  Forward  one line   (or N lines).
+  y  ^Y  k  ^K  ^P  *  Backward one line   (or N lines).
+  f  ^F  ^V  SPACE  *  Forward  one window (or N lines).
+  b  ^B  ESC-v      *  Backward one window (or N lines).
+  z                 *  Forward  one window (and set window to N).
+  w                 *  Backward one window (and set window to N).
+  ESC-SPACE         *  Forward  one window, but don't stop at end-of-file.
+  d  ^D             *  Forward  one half-window (and set half-window to N).
+  u  ^U             *  Backward one half-window (and set half-window to N).
+  ESC-)  RightArrow *  Left  one half screen width (or N positions).
+  ESC-(  LeftArrow  *  Right one half screen width (or N positions).
+HELP -- Press RETURN for more, or q when done...skipping...
+commit f6bb692fbe68495892142a068aa7711aefaaa96c
+Author: wenyan Wang <wenyan.wang@pnc.com>
+Date:   Tue May 3 14:58:24 2016 -0400
+
+    additional v2 changes
+
+commit 85305607cace3469628dc80a3ad121e14af7653d
+Author: wenyan Wang <wenyan.wang@pnc.com>
+Date:   Tue May 3 14:57:04 2016 -0400
+
+    v2 changes
+
+commit 3647f935baff504cff7e2a9b20479fbb220c74ca
+Author: wenyan Wang <wenyan.wang@pnc.com>
+Date:   Tue May 3 14:52:29 2016 -0400
+
+    Commit the change in new branch
+
+commit a942890bfb974f724b3950b3a3aed6ca297299e3
+Author: wenyan Wang <wenyan.wang@pnc.com>
+Date:   Tue May 3 14:42:28 2016 -0400
+
+    Stashed changes
+
+pp84689@PP7BFZ2Y52 MINGW64 /z/Git/Repos/Projects/NewGit (v2.1)
+$ git checkout master
+Switched to branch 'master'
+
+pp84689@PP7BFZ2Y52 MINGW64 /z/Git/Repos/Projects/NewGit (master)
+$ git checkout v2.1
+Switched to branch 'v2.1'
+
+pp84689@PP7BFZ2Y52 MINGW64 /z/Git/Repos/Projects/NewGit (v2.1)
+$ git merge v2.1
+Already up-to-date.
+
+pp84689@PP7BFZ2Y52 MINGW64 /z/Git/Repos/Projects/NewGit (v2.1)
+$ git checkout master
+Switched to branch 'master'
+
+pp84689@PP7BFZ2Y52 MINGW64 /z/Git/Repos/Projects/NewGit (master)
+$ git log
+commit 3647f935baff504cff7e2a9b20479fbb220c74ca
+Author: wenyan Wang <wenyan.wang@pnc.com>
+Date:   Tue May 3 14:52:29 2016 -0400
+
+    Commit the change in new branch
+
+commit a942890bfb974f724b3950b3a3aed6ca297299e3
+Author: wenyan Wang <wenyan.wang@pnc.com>
+Date:   Tue May 3 14:42:28 2016 -0400
+
+    Stashed changes
+
+commit c4a7245299be8aa7a7916a5a31f5a1ebfdde242e
+Author: wenyan Wang <wenyan.wang@pnc.com>
+Date:   Tue May 3 14:31:10 2016 -0400
+
+    added file 3
+
+pp84689@PP7BFZ2Y52 MINGW64 /z/Git/Repos/Projects/NewGit (master)
+$ git merge v2.1
+Updating 3647f93..f6bb692
+Fast-forward
+ File 1.txt | 3 ++-
+ File 3.txt | 3 ++-
+ File 4.txt | 2 ++
+ 3 files changed, 6 insertions(+), 2 deletions(-)
+ create mode 100644 File 4.txt
+
+pp84689@PP7BFZ2Y52 MINGW64 /z/Git/Repos/Projects/NewGit (master)
+$ git log
+commit f6bb692fbe68495892142a068aa7711aefaaa96c
+Author: wenyan Wang <wenyan.wang@pnc.com>
+Date:   Tue May 3 14:58:24 2016 -0400
+
+    additional v2 changes
+
+commit 85305607cace3469628dc80a3ad121e14af7653d
+Author: wenyan Wang <wenyan.wang@pnc.com>
+Date:   Tue May 3 14:57:04 2016 -0400
+
+    v2 changes
+
+commit 3647f935baff504cff7e2a9b20479fbb220c74ca
+Author: wenyan Wang <wenyan.wang@pnc.com>
+Date:   Tue May 3 14:52:29 2016 -0400
+
+    Commit the change in new branch
+
+commit a942890bfb974f724b3950b3a3aed6ca297299e3
+Author: wenyan Wang <wenyan.wang@pnc.com>
+Date:   Tue May 3 14:42:28 2016 -0400
+
+    Stashed changes
+
+...skipping...
+
+
+                   SUMMARY OF LESS COMMANDS
+
+      Commands marked with * may be preceded by a number, N.
+      Notes in parentheses indicate the behavior if N is given.
+      A key preceded by a caret indicates the Ctrl key; thus ^K is ctrl-K.
+
+  h  H                 Display this help.
+  q  :q  Q  :Q  ZZ     Exit.
+ ---------------------------------------------------------------------------
+
+                           MOVING
+
+  e  ^E  j  ^N  CR  *  Forward  one line   (or N lines).
+  y  ^Y  k  ^K  ^P  *  Backward one line   (or N lines).
+  f  ^F  ^V  SPACE  *  Forward  one window (or N lines).
+  b  ^B  ESC-v      *  Backward one window (or N lines).
+  z                 *  Forward  one window (and set window to N).
+  w                 *  Backward one window (and set window to N).
+  ESC-SPACE         *  Forward  one window, but don't stop at end-of-file.
+  d  ^D             *  Forward  one half-window (and set half-window to N).
+  u  ^U             *  Backward one half-window (and set half-window to N).
+  ESC-)  RightArrow *  Left  one half screen width (or N positions).
+HELP -- Press RETURN for more, or q when done...skipping...
+Author: wenyan Wang <wenyan.wang@pnc.com>
+Date:   Tue May 3 14:58:24 2016 -0400
+
+    additional v2 changes
+
+commit 85305607cace3469628dc80a3ad121e14af7653d
+Author: wenyan Wang <wenyan.wang@pnc.com>
+Date:   Tue May 3 14:57:04 2016 -0400
+
+    v2 changes
+
+commit 3647f935baff504cff7e2a9b20479fbb220c74ca
+Author: wenyan Wang <wenyan.wang@pnc.com>
+Date:   Tue May 3 14:52:29 2016 -0400
+
+    Commit the change in new branch
+
+commit a942890bfb974f724b3950b3a3aed6ca297299e3
+Author: wenyan Wang <wenyan.wang@pnc.com>
+Date:   Tue May 3 14:42:28 2016 -0400
+
+    Stashed changes
+
+
+pp84689@PP7BFZ2Y52 MINGW64 /z/Git/Repos/Projects/NewGit (master)
+$ git show
+commit f6bb692fbe68495892142a068aa7711aefaaa96c
+Author: wenyan Wang <wenyan.wang@pnc.com>
+Date:   Tue May 3 14:58:24 2016 -0400
+
+    additional v2 changes
+
+diff --git a/File 4.txt b/File 4.txt
+index 2de72c7..41f2369 100644
+--- a/File 4.txt
++++ b/File 4.txt
+@@ -1 +1,2 @@
+ V2.1
++additional changes for v2.1
+\ No newline at end of file
+
+pp84689@PP7BFZ2Y52 MINGW64 /z/Git/Repos/Projects/NewGit (master)
+$
